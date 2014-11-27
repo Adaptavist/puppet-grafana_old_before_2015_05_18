@@ -24,4 +24,5 @@ class grafana::params {
   $install_method = 'archive'
   $symlink        = true
   $version        = '1.8.1'
+  $strip_components = 1
 }

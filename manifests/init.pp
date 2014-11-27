@@ -77,6 +77,7 @@ class grafana (
   $install_dir    = $grafana::params::install_dir,
   $install_method = $grafana::params::install_method,
   $symlink        = $grafana::params::symlink,
+  $archive_strip_components = $grafana::params::strip_components,
   $symlink_name   = "${install_dir}/grafana",
   $version        = $grafana::params::version,
 ) inherits grafana::params {
@@ -92,6 +93,7 @@ class grafana (
       ensure   => present,
       checksum => false,
       target   => $install_dir,
+      strip_components => $strip_components,
       url      => $download_url,
     }
 
