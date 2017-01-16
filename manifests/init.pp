@@ -71,7 +71,6 @@
 class grafana (
   $datasources    = $grafana::params::datasources,
   $default_route  = $grafana::params::default_route,
-  $download_url   = "http://grafanarel.s3.amazonaws.com/grafana-${version}.tar.gz",
   $grafana_group  = $grafana::params::grafana_group,
   $grafana_user   = $grafana::params::grafana_user,
   $install_dir    = $grafana::params::install_dir,
@@ -80,6 +79,7 @@ class grafana (
   $archive_strip_components = $grafana::params::strip_components,
   $symlink_name   = "${install_dir}/grafana",
   $version        = $grafana::params::version,
+  $download_url   = "http://grafanarel.s3.amazonaws.com/grafana-${version}.tar.gz",
 ) inherits grafana::params {
   # TODO: make sure at least one is 'default = true' - probably requires use of lambdas
   # TODO: make sure at least one is 'grafanaDB = true' - probably requires use of lambdas
